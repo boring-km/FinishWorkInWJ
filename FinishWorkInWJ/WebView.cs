@@ -28,7 +28,6 @@ namespace FinishWorkInWJ
             Cef.Initialize(cefSettings);
             chrome = new ChromiumWebBrowser("https://portal.wjtb.net/loginForm.do");
             chrome.Dock = DockStyle.Fill;
-            // From창에 ChrominumWebCrowser 가득 채우기
             this.Controls.Add(chrome);
         }
 
@@ -39,9 +38,14 @@ namespace FinishWorkInWJ
             chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementById('password').value = '" + pw + "';");
         }
 
-        public void execute()
+        public void login()
         {
             chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementById('btnSubmit').click();");
+        }
+
+        public void clickFinishWork()
+        {
+            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementById('headerIconList').children[0].children[16].children[0].click();");
         }
 
     }
