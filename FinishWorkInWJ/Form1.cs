@@ -2,7 +2,6 @@
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using Interop.mshtml;
 using SHDocVw;
 
 namespace FinishWorkInWJ
@@ -18,7 +17,7 @@ namespace FinishWorkInWJ
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
             StreamReader reader = null;
             try
             {
@@ -77,15 +76,11 @@ namespace FinishWorkInWJ
             {
                 return;
             }
-            label1.Text = "인터넷 여는 중...";
+            WebView web = new WebView();
+            web.Show();
+            web.inputValue(id, pw);
+            web.execute();
 
-            var ie = new InternetExplorer();
-            var webBrowser = (IWebBrowserApp)ie;
-            webBrowser.Visible = true;
-            webBrowser.Navigate("http://portal.wjtb.net/");
-            this.Close();
-            Thread.Sleep(3000);
-            webBrowser.Quit();
         }
 
         // 창 닫기
