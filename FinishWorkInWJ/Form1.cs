@@ -29,7 +29,7 @@ namespace FinishWorkInWJ
                 textBox1.Text = id;
                 textBox2.Text = pw;
                 textBox3.Text = time;
-                // button2.PerformClick();
+                button2.PerformClick();
             }
             catch
             {
@@ -86,8 +86,9 @@ namespace FinishWorkInWJ
             WebView web = new WebView();
             web.Show();
             web.inputValue(id, pw);
-            web.login();
-            Delayed(2000, () => web.clickFinishWork());
+            Delayed(100, () => web.login());
+            Delayed(1000, () => web.clickFinishWork());
+            Delayed(1500, () => web.clickYes());
 
         }
 

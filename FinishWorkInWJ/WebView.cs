@@ -45,7 +45,26 @@ namespace FinishWorkInWJ
 
         public void clickFinishWork()
         {
-            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementById('headerIconList').children[0].children[16].children[0].click();");
+            chrome.Load("https://portal.wjtb.net/portal/popup/P0009/p0009.do?popupFormId=p0009f23&condition=Y^1&targetType=N");
+        }
+
+        public void clickYes()
+        {
+            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementsByTagName('a')[0].click();");
+        }
+
+        public void setTomorrowStartTime(string time)
+        {
+            string hour = time.Substring(0, 2);
+            string minute = time.Substring(2, 2);
+            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementById('input2').value='" + hour + "';");
+            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementById('input3').value='" + minute + "';");
+            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementsByName('check2')[1].checked = true;");
+        }
+
+        public void clickSaveButton()
+        {
+            // TODO 저장버튼 클릭
         }
 
     }

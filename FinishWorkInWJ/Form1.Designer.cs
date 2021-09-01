@@ -76,6 +76,7 @@ namespace FinishWorkInWJ
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 21);
             this.textBox3.TabIndex = 3;
+            this.textBox3.Text = "0830";
             // 
             // button1
             // 
