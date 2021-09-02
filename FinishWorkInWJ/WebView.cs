@@ -62,6 +62,7 @@ namespace FinishWorkInWJ
         public void clickSaveButton()
         {
             chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementsByTagName('a')[0].click();");
+            this.Close();
         }
 
     }
