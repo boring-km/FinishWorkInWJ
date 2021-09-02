@@ -87,9 +87,9 @@ namespace FinishWorkInWJ
             web.Show();
             web.inputValue(id, pw);
             Delayed(100, () => web.login());
-            Delayed(1000, () => web.clickFinishWork());
-            Delayed(1500, () => web.clickYes());
-
+            Delayed(1400, () => web.clickFinishWork());
+            Delayed(1800, () => web.setTomorrowStartTime(time));
+            Delayed(2400, () => web.clickSaveButton());
         }
 
         public void Delayed(int delay, Action action)

@@ -45,26 +45,23 @@ namespace FinishWorkInWJ
 
         public void clickFinishWork()
         {
-            chrome.Load("https://portal.wjtb.net/portal/popup/P0009/p0009.do?popupFormId=p0009f23&condition=Y^1&targetType=N");
-        }
-
-        public void clickYes()
-        {
-            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementsByTagName('a')[0].click();");
+            chrome.Load("https://portal.wjtb.net/portal/popup/P0009/p0009.do?popupFormId=p0009f24&condition=Y^1&targetType=N");
         }
 
         public void setTomorrowStartTime(string time)
         {
             string hour = time.Substring(0, 2);
             string minute = time.Substring(2, 2);
-            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementById('input2').value='" + hour + "';");
-            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementById('input3').value='" + minute + "';");
+            Console.WriteLine($"document.getElementById('input2').value='{hour}';");
+            Console.WriteLine($"document.getElementById('input3').value='{minute}';");
+            chrome.ExecuteScriptAsyncWhenPageLoaded($"document.getElementById('input2').value='{hour}';");
+            chrome.ExecuteScriptAsyncWhenPageLoaded($"document.getElementById('input3').value='{minute}';");
             chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementsByName('check2')[1].checked = true;");
         }
 
         public void clickSaveButton()
         {
-            // TODO 저장버튼 클릭
+            chrome.ExecuteScriptAsyncWhenPageLoaded("document.getElementsByTagName('a')[0].click();");
         }
 
     }
