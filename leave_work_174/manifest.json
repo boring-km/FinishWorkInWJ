@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "웅진씽크빅 174 퇴근",
+  "version": "0.0.1",
+  "description": "웅진씽크빅 174 빠르게 퇴근하기",
+  "action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  }
+}
